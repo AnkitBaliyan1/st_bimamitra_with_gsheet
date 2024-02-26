@@ -56,4 +56,4 @@ def generate_response_rag(user_input):
     
     response = chain.run(input_documents = relevant_docs, question = question)
 
-    return response
+    return question, response
