@@ -1,0 +1,5 @@
+langchain
+langchain_openai
+pinecone_client
+streamlit
+st-gsheets-connection
