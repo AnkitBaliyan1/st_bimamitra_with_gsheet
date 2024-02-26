@@ -8,7 +8,7 @@ def udpate_database(user, query, response, rating="NA"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     worksheet = "bimamitra"
 
-    existing_data = conn.read(worksheet=worksheet, usecols = list(range(5)), ttl=5)
+    existing_data = conn.read(worksheet=worksheet, usecols = list(range(6)), ttl=5)
 
     today_date = date.today().strftime("%Y-%m-%d")
     time_now = datetime.now().strftime("%H:%M:%S")
@@ -24,7 +24,7 @@ def udpate_database(user, query, response, rating="NA"):
         }
     )
 
-    # tem_df.columns = existing_data.columns
+    tem_df.columns = existing_data.columns
 
     updated_data = pd.concat([tem_df,existing_data], ignore_index=True)
 
