@@ -59,10 +59,10 @@ def main_page():
         if query:
             # Generate response
             with st.spinner("Generating Response"):
-                response = generate_response_rag(query)
+                prompt , response = generate_response_rag(query)
                 st.write(response)
                 udpate_database(st.session_state["username"],
-                                query, response)
+                                query,prompt,response)
                 
         else:
             st.error("Provide the query first")
