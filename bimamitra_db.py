@@ -24,7 +24,7 @@ def udpate_database(user, query, response, rating="NA"):
         }
     )
 
-    tem_df.columns = existing_data.columns
+    # tem_df.columns = existing_data.columns
 
     updated_data = pd.concat([tem_df,existing_data], ignore_index=True)
 
