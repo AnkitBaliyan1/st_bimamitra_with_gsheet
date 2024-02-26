@@ -4,12 +4,7 @@ import pandas as pd
 from datetime import date, datetime
 
 def udpate_database(user, query, prompt ,response, rating="NA"):
-
-    rating = submit_rating(query, response)
-    print("rating is:",rating)
-
-    # if rating != "NA" and rating is not None:
-    # with st.spinner("in progress"):
+    
     conn = st.connection("gsheets", type=GSheetsConnection)
     worksheet = "bimamitra"
 
