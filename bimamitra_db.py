@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 from datetime import date, datetime
+import pytz
 
 def udpate_database(user, query, prompt ,response, rating="NA"):
     
@@ -12,7 +13,8 @@ def udpate_database(user, query, prompt ,response, rating="NA"):
 
 
     today_date = date.today().strftime("%Y-%m-%d")
-    time_now = datetime.now().strftime("%H:%M:%S")
+    ist = pytz.timezone('Asia/Kolkata') 
+    time_now = datetime.now(ist).strftime("%H:%M:%S")
 
     tem_df = pd.DataFrame(
         {
