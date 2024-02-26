@@ -3,7 +3,7 @@ from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 from datetime import date, datetime
 
-def udpate_database(user, query, response, rating="NA"):    
+def udpate_database(user, query, response,prompt, rating="NA"):    
     # with st.spinner("in progress"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     worksheet = "bimamitra"
@@ -19,6 +19,7 @@ def udpate_database(user, query, response, rating="NA"):
             "time": [time_now],
             "username": [user],
             "query": [query],
+            "prompt": [prompt],
             "response": [response],
             "rating": [rating],
         }
