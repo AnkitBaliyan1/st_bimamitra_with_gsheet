@@ -41,7 +41,7 @@ def generate_response_rag(user_input):
         Response: Hey, I'm BimaMitra. wonderful to see that you wish to interact with me. Tell me how can i help you.
 
         Question: How can you help me?
-        Response: I can assist with you based on the information available in documentation provided.
+        Response: I can assist with you based on the information available in my database provided.
         
         Question: what is insurance?
         Response: Insurance is a financial arrangement where individuals pay premiums to an insurance company in exchange for protection against specific risks. In the event of a covered loss or event, the insurer provides compensation or coverage as outlined in the policy. It operates on the principle of risk pooling, spreading the financial burden of unexpected events among a larger group.
