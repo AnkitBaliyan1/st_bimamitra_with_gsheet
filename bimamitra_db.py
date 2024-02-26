@@ -8,7 +8,7 @@ def udpate_database(user, query, response,prompt, rating="NA"):
     conn = st.connection("gsheets", type=GSheetsConnection)
     worksheet = "bimamitra"
 
-    existing_data = conn.read(worksheet=worksheet, usecols = list(range(6)), ttl=5)
+    existing_data = conn.read(worksheet=worksheet, usecols = list(range(7)), ttl=5)
 
     today_date = date.today().strftime("%Y-%m-%d")
     time_now = datetime.now().strftime("%H:%M:%S")
