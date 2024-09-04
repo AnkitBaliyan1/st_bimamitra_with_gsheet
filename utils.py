@@ -19,7 +19,7 @@ def generate_response_rag(user_input):
     api_key=os.environ.get("PINECONE_API_KEY")
     )
     # index = Pinecone.from_existing_index(pinecone_index_name, embeddings, namespace=os.environ.get("NAMESPACE"))
-    index = PineconeVectorStore(index_name=pinecone_index_name, embeddings=embeddings, namespace = os.environ.get("NAMESPACE"), pinecone_api_key= os.environ.get("PINECONE_API_KEY") )
+    index = PineconeVectorStore(index_name=pinecone_index_name, embedding=embeddings, namespace = os.environ.get("NAMESPACE"), pinecone_api_key= os.environ.get("PINECONE_API_KEY") )
 
     similar_doc = index.similarity_search_with_score(user_input, int(k))
 
