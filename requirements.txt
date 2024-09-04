@@ -3,3 +3,4 @@ langchain_openai
 pinecone_client
 streamlit
 st-gsheets-connection
+langchain-pinecone==0.1.3
