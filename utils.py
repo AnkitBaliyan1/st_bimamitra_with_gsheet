@@ -21,7 +21,8 @@ def generate_response_rag(user_input):
     # index = Pinecone.from_existing_index(pinecone_index_name, embeddings, namespace=os.environ.get("NAMESPACE"))
     index = PineconeVectorStore(pinecone_index_name, embeddings, namespace = os.environ.get("NAMESPACE"))
 
-    similar_doc = index.similarity_search_with_score(user_input, int(k))
+    # similar_doc = index.similarity_search_with_score(user_input, int(k))
+    similar_doc = index.similarity_search_by_vector_with_score(query=user_input, k=int(k))
 
     relevant_docs = [doc for doc, similarity_score in similar_doc]
 
