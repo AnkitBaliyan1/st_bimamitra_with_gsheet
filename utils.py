@@ -5,7 +5,8 @@
 # importing for generating resposne.
 import os
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_community.vectorstores import Pinecone
+# from langchain_community.vectorstores import Pinecone
+from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone as PineconeClient
 from langchain.chains.question_answering import load_qa_chain
 
@@ -17,7 +18,8 @@ def generate_response_rag(user_input):
     PineconeClient(
     api_key=os.environ.get("PINECONE_API_KEY")
     )
-    index = Pinecone.from_existing_index(pinecone_index_name, embeddings, namespace=os.environ.get("NAMESPACE"))
+    # index = Pinecone.from_existing_index(pinecone_index_name, embeddings, namespace=os.environ.get("NAMESPACE"))
+    index = PineconeVectorStore(pinecone_index_name, embeddings, namespace = os.environ.get("NAMESPACE"))
 
     similar_doc = index.similarity_search_with_score(user_input, int(k))
 
